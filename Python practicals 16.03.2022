@@ -1,0 +1,318 @@
+1. Distance between two points
+import math
+def dist(x1,y1,x2,y2):
+ dist=math.sqrt((x2-x1)**2+(y2-y1)**2)
+ return dist
+d=dist(12,7,5,3)
+print("Distance between two points",d)
+
+2 Linear search
+n=int(input("Enter the size of list"))
+lst=[]
+flag=False
+print("Enter the elements")
+for i in range(0,n):
+lst.append(int(input()))
+print(lst)
+x=int(input("Enter the element to search"))
+for i in range(0,n):
+if x==lst[i]:
+flag=True
+break
+if flag==True:
+print("The element is found")
+else:
+print("The element is not found")
+
+3 Binary Search
+n=int(input("Enter the size of list"))
+lst=[]
+print("Enter the elements")
+for i in range(0,n):
+lst.append(int(input()))
+print(lst)
+x=int(input("Enter the element to search"))
+low=0
+high=n-1
+mid=(low+high)//2
+while low<=high:
+if lst[mid]==x:
+break
+elif lst[mid]<x:
+low=mid+1
+else:
+high=mid-1
+mid =(low+high)//2
+if low>high:
+print("Element in not found")
+
+4 Maximum of a list of numbers
+n=int(input("Enter the number of elements"))
+a=[]
+for i in range(0,n):
+a.append(int(input()))
+print(a)
+max=a[0]
+for i in range(0,n):
+if a[i]>max:
+max=a[i]
+print("The maximum element is:",max)
+
+5 Selection Sort
+n=int(input("Enter the size of list"))
+lst=[]
+print("Enter the elements")
+for i in range(0,n):
+lst.append(int(input()))
+print(lst)
+for i in range(0,n-1):
+for j in range (i+1,n):
+if lst[j]<lst[i]:
+temp=lst[i]
+lst[i]=lst[j]
+lst[j]=temp
+print("The sorted values are")
+print(lst)
+
+6 Insertion Sort
+n=int(input("Enter the size of the list"))
+inputlist=[]
+for i in range(0,n):
+inputlist.append(int(input()))
+print(inputlist)
+for i in range(1,len(inputlist)):
+j=i
+while j>0 and inputlist[j-1]>inputlist[j]:
+temp=inputlist[j]
+inputlist[j]=inputlist[j-1]
+inputlist[j-1]=temp
+j-=1
+print("sorted List:",inputlist)
+
+7 PrimeNumber
+def isprime(n):
+for x in range(2,n//2):
+if n%x==0:
+return 0
+return 1
+n=int(input("Enter the range value "))
+primes=[]
+i=2
+while len(primes)<n:
+if isprime(i)==1:
+primes.append(i)
+i=i+1
+print(primes)
+
+8 Convert Celsius to Fahrenheit
+Celsius = int(input("Enter a temp in Celsius: "))
+Fahrenheit = 9.0/5.0 * Celsius + 32
+print( "Temperature:", Celsius, "Celsius = ", Fahrenheit, " F")
+Output
+Enter a temperature in Celsius: 32
+Temperature: 32 Celsius = 89.6 F
+
+9 To Print Students Grade
+sub1=int(input("Enter marks of the first subject: "))
+sub2=int(input("Enter marks of the sec subject: "))
+sub3=int(input("Enter marks of the third subject: "))
+sub4=int(input("Enter marks of the fourth subject: "))
+sub5=int(input("Enter marks of the fifth subject: "))
+avg=(sub1+sub2+sub3+sub4+sub4)/5
+if(avg>=90):
+ print("Grade: A")
+elif(avg>=80&avg<90):
+ print("Grade: B")
+elif(avg>=70&avg<80):
+ print("Grade: C")
+elif(avg>=60&avg<70):
+ print("Grade: D")
+else:
+ print("Grade: F")
+Output
+Enter marks of the first subject: 78
+Enter marks of the sec subject: 89
+Enter marks of the third subject: 90
+Enter marks of the fourth subject: 99
+Enter marks of the fifth subject: 67
+Grade: A
+
+10 To print Multiplication Table
+num=int(input('enter a number'))
+for i in range(1,11):
+ print(num,'x',i,'=',num*i)
+
+11 To find Quotient and Remainder
+a=int(input())
+b=int(input())
+c=a//b
+d=a%b
+print('Quo:',c,'rem:',d)
+
+12 Biggest Among Three numbers
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+if (a >= b) and (a >= c):
+ largest = a
+elif (b >= c):
+ largest = b
+else:
+ largest = c
+print("The largest number between",a,",",b,"and",c,"is",largest)
+
+13 Write a Python program 
+i. To calculate the length of a string
+>>> str1='welcome'
+>>> len(str1)
+7
+ii. To reverse words in a string
+>>> str1='welcome'
+>>> str1[ : :-1]
+'emoclew' 
+iii. To display same string multiple times 
+>>> str1*5
+'welcomewelcomewelcomewelcomewelcome'
+iv. To concatenate two strings
+>>> str1='python'
+>>> str2='program'
+>>> str1+str2
+'pythonprogram'
+v. Str1=”South India” , using string slicing to display “India” 
+>>> str1='South India'
+>>> str1[6:]
+'India'
+
+14 Palindrome-Number
+n=int(input("Enter number:"))
+pal=n
+sum=0
+while(n>0):
+ rem=n%10
+ sum=sum*10+rem
+ n=n//10
+if(pal==sum):
+ print("The number is a palindrome!")
+else:
+ print("The number isn't a palindrome!")
+
+15 Sum of Digits
+n=int(input("Enter number:"))
+Sum=0
+while(n>0):
+ rem=n%10
+ Sum=Sum+rem
+ n=n//10
+print("Sum of Digit :",Sum)
+
+16 To Find odd and even number in List
+a=[]
+n=int(input("Enter number of elements:"))
+for i in range(1,n+1):
+ b=int(input("Enter element:"))
+ a.append(b)
+even=[]
+odd=[]
+for j in a:
+ if(j%2==0):
+ even.append(j)
+ else:
+ odd.append(j)
+print("The even list",even)
+print("The odd list",odd)
+
+17 Armstrong Number
+num = int(input("Enter a number: "))
+Sum = 0
+arm = num
+while num > 0:
+ rem = num % 10
+ Sum += rem ** 3
+ num //= 10 
+if arm == Sum:
+ print("The given number is an Armstrong number")
+else:
+ print("The given number is not an Armstrong number")
+
+18 Fibonacci series
+def fib(n):
+ if(n==0):
+ return 0
+ elif(n==1):
+ return 1
+ else:
+ return (fib(n-1)+fib(n-2))
+n=int(input("Enter the number of terms"))
+for i in range(n):
+ print("Fibonacci Series:",i,fib(i))
+
+19 Average of n numbers in the list
+a=[]
+n=int(input("Enter number of elements:"))
+for i in range(1,n+1):
+ b=int(input("Enter element:"))
+ a.append(b)
+Sum=0
+for i in a:
+Sum=Sum+i
+avg=Sum/n
+print("The sum of n numbers",Sum)
+print("The avg of n numbers",avg)
+
+20 Area of Triangle using Function.
+import math
+def triarea(a,b,c):
+ s=(a+b+c)/2
+ area=math.sqrt(s*(s-a)*(s-b)*(s-c))
+ return(area)
+a=int(input("Enter the length of first side: "))
+b=int(input("Enter the length of second side: "))
+c=int(input("Enter the length of third side: "))
+a=triarea(a,b,c)
+print("Area of the triangle is: ",a)
+
+21 Circulate the Values
+def cir(l,n):
+ for i in range(1,n+1):
+ j=len(l)-1
+ while(j>0):
+ temp=l[j]
+ l[j]=l[j-1]
+ l[j-1]=temp
+ j=j-1
+ print(i,'rotation',l)
+l=[10,20,30,40,50,60]
+cir(l,3)
+
+22 Distance between two points
+import math
+def dist(x1,y1,x2,y2):
+ dist=math.sqrt((x2-x1)**2+(y2-y1)**2)
+ return dist
+d=dist(12,7,5,3)
+print("Distance between two points",d)
+
+23 Number series
+n=int(input('enter the number of terms'))
+Sum=0
+i=1
+while(i<=n):
+ Sum=Sum+i
+ i=i+2
+print("Sum of odd series",Sum)
+
+24 GCD of Two Numbers
+def gcd(x, y):
+ if x > y:
+ smaller = y
+ else:
+ smaller = x
+ for i in range(1, smaller+1):
+ if((x % i == 0) and (y % i == 0)):
+ hcf = i
+return hcf
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+print('Gcd of two numbers ',gcd(num1,num2))
+
+
