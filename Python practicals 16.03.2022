@@ -316,3 +316,5 @@ num2 = int(input("Enter second number: "))
 print('Gcd of two numbers ',gcd(num1,num2))
 
 
+https://drive.google.com/file/d/1u2ySjYEyrdYsEJGEm2UA38Xgr6H6NHEf/view?usp=drivesdk
+
